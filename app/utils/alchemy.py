@@ -2,10 +2,11 @@
 
 import json
 import time
-import datetime
+from datetime import date, datetime
 
 from sqlalchemy.ext.declarative import DeclarativeMeta
-
+from app import log
+LOG = log.get_logger()
 
 def new_alchemy_encoder():
     # http://stackoverflow.com/questions/5022066/how-to-serialize-sqlalchemy-result-to-json
@@ -21,9 +22,12 @@ def new_alchemy_encoder():
 
                 # an SQLAlchemy class
                 fields = {}
-                for field in [x for x in dir(obj) if not x.startswith('_') and x != 'metadata']:
+                for field in [x for x in dir(obj) if not x.startswith('_') and x != 'metadata' and x !='FIELDS']:
                     fields[field] = obj.__getattribute__(field)
+                    if isinstance(fields[field], (datetime,date)):
+                        fields[field] = int(time.mktime(fields[field].timetuple()))
                 # a json-encodable dict
+                LOG.debug(fields)
                 return fields
 
             return json.JSONEncoder.default(self, obj)
@@ -35,7 +39,7 @@ def passby(data):
 
 
 def datetime_to_timestamp(date):
-    if isinstance(date, datetime.date):
+    if isinstance(date, (datetime,date)):
         return int(time.mktime(date.timetuple()))
     else:
         return None

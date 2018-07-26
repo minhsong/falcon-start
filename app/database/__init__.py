@@ -2,6 +2,7 @@
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
+from app.config import DB_CONNECTING_STRING
 
 def get_engine(uri):
     options = {
@@ -18,8 +19,7 @@ def get_engine(uri):
 
 
 db_session = scoped_session(sessionmaker())
-db_string = "postgres://postgres:123@localhost/challenge"
-engine = get_engine(db_string)
+engine = get_engine(DB_CONNECTING_STRING)
 
 
 def init_session():
