@@ -5,6 +5,7 @@ from sqlalchemy.orm.exc import NoResultFound
 from app.api.base import BaseResource
 from app.model import Customer
 from app.utils.authHooks import auth_required
+from app.errors import InvalidParameterError
 
 from app import log
 LOG = log.get_logger()
@@ -16,12 +17,18 @@ class CustomerCreate(BaseResource):
         rawData = req.context['data']
         format_str = '%d/%m/%Y' # The format
         if rawData['email'] and rawData['name']:
-            cus = Customer()
-            cus.email = rawData['email']
-            cus.name = rawData['name']
-            cus.dob = datetime.datetime.strptime(rawData['dob'], format_str) #dob format dd/mm/yyyy
-            session.add(cus)
-        self.on_success(res,None)
+            isExistedEmailCus = session.query(Customer).filter(Customer.email==rawData['email']).first()
+            LOG.debug(isExistedEmailCus)
+            if isExistedEmailCus:
+                raise InvalidParameterError('Email is used in system!')
+            else:
+                cus = Customer()
+                cus.email = rawData['email']
+                cus.name = rawData['name']
+                cus.dob = datetime.datetime.strptime(rawData['dob'], format_str) #dob format dd/mm/yyyy
+                session.add(cus)
+        else:
+            raise InvalidParameterError('email and name are required!')
 
 class CustomerUpdate(BaseResource):
     @falcon.before(auth_required)
@@ -31,6 +38,9 @@ class CustomerUpdate(BaseResource):
         format_str = '%d/%m/%Y' # The format
         if rawData['_id'] and rawData['email'] and rawData['name']:
             cus = session.query(Customer).get(rawData['_id'])
+            isExistedEmailCus = session.query(Customer).filter(Customer.email==rawData['email']).first()
+            if isExistedEmailCus and isExistedEmailCus._id!=cus._id:
+                raise InvalidParameterError('Email is used, please chose other email')
             if cus:
                 cus.email = rawData['email']
                 cus.name = rawData['name']
@@ -39,7 +49,7 @@ class CustomerUpdate(BaseResource):
                 session.commit()
                 self.on_success(res,cus.to_dict())
             else:
-                self.on_success(res,None)
+                raise InvalidParameterError('Customer not found!')
 
 class CustomerDetail(BaseResource):
     @falcon.before(auth_required)
@@ -56,7 +66,9 @@ class CustomerDelete(BaseResource):
         if rawData['_id']:
             _id = rawData['_id']
             session.query(Customer).filter(Customer._id==_id).delete()
-        self.on_success(res,None)
+            self.on_success(res,None)
+        else:
+            raise InvalidParameterError('_id is required')
 
 class CustomerList(BaseResource):
     @falcon.before(auth_required)
