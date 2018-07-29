@@ -6,7 +6,7 @@ Falcon is a high-performance Python framework for building cloud APIs, smart pro
 
 Requirements
 ============
-You may need a related dependency library for a PostgreSQL database. You have to install PostgreSQL.
+You may need a related dependency library for a PostgreSQL database and setup database.
 
 
 Installation
