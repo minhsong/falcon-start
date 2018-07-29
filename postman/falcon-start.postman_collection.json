@@ -1,0 +1,266 @@
+{
+	"id": "c791100a-864a-4bf8-9ab4-7d25a3662f42",
+	"name": "python challenge",
+	"description": "",
+	"order": [
+		"db6ad196-4b8c-4918-96b4-e0a939bbcfd2",
+		"bbdb7315-ce00-4607-8039-0c5632368d89"
+	],
+	"folders": [
+		{
+			"owner": "4211807",
+			"lastUpdatedBy": "4211807",
+			"lastRevision": 4433071791,
+			"folder": null,
+			"id": "b4db149b-df95-46f4-8319-76eb7b5556f0",
+			"name": "customer",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"b2b63448-8dc4-47e8-91da-1a75522e6956",
+				"8c3c2606-1b53-4575-a12a-5d7319619869",
+				"ce05c79b-c60d-482d-ac1d-baeed0dc59c8",
+				"ed437327-25f9-40a9-bd1d-d76b1a33393d"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "4211807",
+			"lastUpdatedBy": "4211807",
+			"lastRevision": 4427365184,
+			"folder": null,
+			"id": "6d9eea0d-aba1-4701-89f9-eecff1a4fcb8",
+			"name": "user",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"94cab299-65b3-4f24-a034-0e4f674175ab"
+			],
+			"folders_order": []
+		}
+	],
+	"folders_order": [
+		"6d9eea0d-aba1-4701-89f9-eecff1a4fcb8",
+		"b4db149b-df95-46f4-8319-76eb7b5556f0"
+	],
+	"timestamp": 0,
+	"owner": "4211807",
+	"public": false,
+	"requests": [
+		{
+			"folder": "b4db149b-df95-46f4-8319-76eb7b5556f0",
+			"id": "8c3c2606-1b53-4575-a12a-5d7319619869",
+			"name": "Create",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://178.128.101.226:5000/customer/create",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "c791100a-864a-4bf8-9ab4-7d25a3662f42",
+			"rawModeData": "{\n  \"email\":\"truongminhsong21@gmail.com\",\n  \"name\":\"Truong Minh Song\",\n  \"dob\":\"24/03/1990\"\n}"
+		},
+		{
+			"folder": "6d9eea0d-aba1-4701-89f9-eecff1a4fcb8",
+			"id": "94cab299-65b3-4f24-a034-0e4f674175ab",
+			"name": "create",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://178.128.101.226:5000/user/create",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "c791100a-864a-4bf8-9ab4-7d25a3662f42",
+			"rawModeData": "{\n  \"email\":\"truongminhsong@gmail.com\",\n  \"password\":\"123\"\n}"
+		},
+		{
+			"folder": "b4db149b-df95-46f4-8319-76eb7b5556f0",
+			"id": "b2b63448-8dc4-47e8-91da-1a75522e6956",
+			"name": "List",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAuthorization: \\\\x65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a6c6257467062434936496e5279645739755a323170626d687a6232356e5147647459576c734c6d4e7662534973496e567a5a584a66615751694f6a46392e444f2d6935745346756e745358445a764261395f484d313044656f476c54535478476d7635487569306f67\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://178.128.101.226:5000/customer/list",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "\\\\x65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a6c6257467062434936496e5279645739755a323170626d687a6232356e5147647459576c734c6d4e7662534973496e567a5a584a66615751694f6a46392e444f2d6935745346756e745358445a764261395f484d313044656f476c54535478476d7635487569306f67",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "c791100a-864a-4bf8-9ab4-7d25a3662f42",
+			"rawModeData": "{\n  \"page\":1,\n  \"itemPerPage\":2,\n  \"str\":\"\"\n}"
+		},
+		{
+			"folder": null,
+			"id": "bbdb7315-ce00-4607-8039-0c5632368d89",
+			"name": "",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://localhost:8000/customer/create",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "c791100a-864a-4bf8-9ab4-7d25a3662f42",
+			"rawModeData": "{\n  \"email\":\"truongminhsong2@gmail.com\",\n  \"name\":\"Truong Minh Song\",\n  \"dob\":\"24/03/1990\"\n}"
+		},
+		{
+			"folder": "b4db149b-df95-46f4-8319-76eb7b5556f0",
+			"id": "ce05c79b-c60d-482d-ac1d-baeed0dc59c8",
+			"name": "get",
+			"dataMode": "params",
+			"data": null,
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "http://178.128.101.226:5000/customer/detail/1",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"collectionId": "c791100a-864a-4bf8-9ab4-7d25a3662f42"
+		},
+		{
+			"folder": null,
+			"id": "db6ad196-4b8c-4918-96b4-e0a939bbcfd2",
+			"name": "login",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://178.128.101.226:5000/auth/login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "c791100a-864a-4bf8-9ab4-7d25a3662f42",
+			"rawModeData": "{\n  \"email\":\"truongminhsong@gmail.com\",\n  \"password\":\"123\"\n}"
+		},
+		{
+			"folder": "b4db149b-df95-46f4-8319-76eb7b5556f0",
+			"id": "ed437327-25f9-40a9-bd1d-d76b1a33393d",
+			"name": "update",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://178.128.101.226:5000/customer/update",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "c791100a-864a-4bf8-9ab4-7d25a3662f42",
+			"rawModeData": "{\n        \"name\": \"Truong Song\",\n        \"dob\": \"28/02/1988\",\n        \"_id\": 1,\n        \"email\": \"truongminhsong@gmail.com\"\n    }"
+		}
+	]
+}
