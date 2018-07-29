@@ -27,6 +27,8 @@ class CustomerCreateAPI(BaseResource):
                 cus.name = rawData['name']
                 cus.dob = datetime.datetime.strptime(rawData['dob'], format_str) #dob format dd/mm/yyyy
                 session.add(cus)
+                newCus = session.query(Customer).filter(Customer.email == cus.email).one()
+                self.on_success(res,newCus.to_dict())
         else:
             raise InvalidParameterError('email and name are required!')
     
