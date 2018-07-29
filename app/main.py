@@ -15,7 +15,7 @@ middleware = [AuthHandler(db_session), JSONTranslator(), DatabaseSessionManager(
 application = falcon.API(middleware=middleware)
 application.add_route('/', BaseResource())
 application.add_route('/auth/login', Auth())
-application.add_route('/user/create', UserController())
+application.add_route('/user', UserController())
 
 application.add_route('/customer', CustomerCreateAPI())
 application.add_route('/customer/{_id}', CustomerAPI())
