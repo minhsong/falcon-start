@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "c791100a-864a-4bf8-9ab4-7d25a3662f42",
+		"name": "python challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "7b9beb5d-9905-4b13-a708-75fa1765f283",
+			"name": "user",
+			"item": [
+				{
+					"_postman_id": "abcac765-def1-43b8-934e-bc63f0cc3933",
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"123@gmail.com\",\n  \"password\":\"123\"\n}"
+						},
+						"url": "http://localhost:5000/user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "fdff791b-9510-4687-8827-36caf5bdae18",
+			"name": "customer",
+			"item": [
+				{
+					"_postman_id": "039a1e7f-72c1-4d32-a533-961e4d423628",
+					"name": "fetch all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InRydW9uZ21pbmhzb25nQGdtYWlsLmNvbSJ9.D4dmeOMfkcBOENa0a3C53vQG4ybdFiDv_c9lqflICh8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"page\":1,\n  \"itemPerPage\":2,\n  \"str\":\"\"\n}"
+						},
+						"url": "http://localhost:5000/customers"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "7cd2f33b-4518-4bca-87b9-20fc70c0845e",
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InRydW9uZ21pbmhzb25nQGdtYWlsLmNvbSJ9.D4dmeOMfkcBOENa0a3C53vQG4ybdFiDv_c9lqflICh8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"Vy22@gmail.com\",\n  \"name\":\"Vy Nguyen\",\n  \"dob\":\"24/03/1990\"\n}"
+						},
+						"url": "http://localhost:5000/customer"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "b41cc25a-2d3f-46a3-ba6f-7544efe18a0f",
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InRydW9uZ21pbmhzb25nQGdtYWlsLmNvbSJ9.D4dmeOMfkcBOENa0a3C53vQG4ybdFiDv_c9lqflICh8"
+							}
+						],
+						"body": {},
+						"url": "http://localhost:5000/customer/13"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "89bf4bf5-027d-499f-bdef-23ac81bff51e",
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InRydW9uZ21pbmhzb25nQGdtYWlsLmNvbSJ9.D4dmeOMfkcBOENa0a3C53vQG4ybdFiDv_c9lqflICh8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Truong Song\",\n        \"dob\": \"28/02/1988\",\n        \"email\": \"uuuuu@gmail.com\"\n    }"
+						},
+						"url": "http://localhost:5000/customer/13"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "afa6cd05-c9e3-4a00-ae6e-8e325cc69529",
+					"name": "get list with filter and pagging",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InRydW9uZ21pbmhzb25nQGdtYWlsLmNvbSJ9.D4dmeOMfkcBOENa0a3C53vQG4ybdFiDv_c9lqflICh8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"page\":1,\n\t\"itemPerPage\":10,\n\t\"str\":\"minh\"\n}"
+						},
+						"url": "http://localhost:5000/customers"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "c38313b8-7577-47c7-a698-29202ca74646",
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InRydW9uZ21pbmhzb25nQGdtYWlsLmNvbSJ9.D4dmeOMfkcBOENa0a3C53vQG4ybdFiDv_c9lqflICh8"
+							}
+						],
+						"body": {},
+						"url": "http://localhost:5000/customer/13"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "e2ac4bd8-31dd-4d86-8d29-1d6a671b38e7",
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"123@gmail.com\",\n  \"password\":\"123\"\n}"
+				},
+				"url": "http://localhost:5000/auth/login"
+			},
+			"response": []
+		}
+	]
+}
