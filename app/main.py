@@ -19,5 +19,5 @@ application.add_route('/user/create', UserController())
 
 application.add_route('/customer', CustomerCreateAPI())
 application.add_route('/customer/{_id}', CustomerAPI())
-application.add_route('/customer/list', CustomerList())
+application.add_route('/customers', CustomerList())
 application.add_error_handler(AppError, AppError.handle)
