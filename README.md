@@ -18,6 +18,9 @@ Install all the python module dependencies in requirements.txt
   pip install -r requirements.txt
 ```
 You have to change the PostreSQL connecting string in file app/config.py base in your server config
+```
+  DB_CONNECTING_STRING = "postgres://<postgres user>:<user password>@<your server>/<postgres database>"
+```
 
 Start server
 
@@ -28,7 +31,7 @@ Start server
 
 Usage by Postman
 =====
-  User can import the "postman request example" file to [Postman Rest api tool](https://virtualenv.pypa.io/en/stable/) to test the api
+  User can import the "postman request example" file to [Postman](https://www.getpostman.com/) to test the api
 
 Usage by call API
 =====
