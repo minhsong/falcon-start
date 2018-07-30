@@ -40,8 +40,8 @@ Create with email and password
 
 - Request
 ```shell
-curl -XPOST http://localhost:5000/user \
-    -H "Content-Type: application/json" \
+curl -XPOST http://localhost:5000/user
+    -H "Content-Type: application/json"
     -d '{
             "email":"truongminhsong@gmail.com",
             "password":"123"
@@ -64,8 +64,8 @@ Log in with email and password
 
 - Request
 ```shell
-curl -XPOST http://localhost:5000/auth/login \
-    -H "Content-Type: application/json" \
+curl -XPOST http://localhost:5000/auth/login
+    -H "Content-Type: application/json"
     -d '{
             "email":"truongminhsong@gmail.com",
             "password":"123"
@@ -93,9 +93,9 @@ curl -XPOST http://localhost:5000/auth/login \
 Create an user
 - Request
     ```shell
-    curl -XPOST http://localhost:5000/customer \
-        -H "Content-Type: application/json" \
-        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss=" \
+    curl -XPOST http://localhost:5000/customer
+        -H "Content-Type: application/json"
+        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss="
         -d '{
                 "email":"Vy22@gmail.com",
                 "name":"Vy Nguyen",
@@ -124,9 +124,9 @@ Create an user
 Update an user
 - Request
     ```shell
-    curl -XPUT http://localhost:5000/customer/13 \
-        -H "Content-Type: application/json" \
-        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss=" \
+    curl -XPUT http://localhost:5000/customer/13
+        -H "Content-Type: application/json"
+        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss="
         -d '{
                 "email":"Vy22@gmail.com",
                 "name":"Vy Nguyen",
@@ -155,8 +155,8 @@ Update an user
 Get an user
 - Request
     ```shell
-    curl -XGET http://localhost:5000/customer/13 \
-        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss=" \
+    curl -XGET http://localhost:5000/customer/13
+        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss="
     ```
 
 - Response
@@ -180,8 +180,8 @@ Get an user
 Delete an user
 - Request
     ```shell
-    curl -XDELETE http://localhost:5000/customer/13 \
-        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss=" \
+    curl -XDELETE http://localhost:5000/customer/13
+        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss="
     ```
 
 - Response
@@ -197,8 +197,8 @@ Delete an user
 Get all customers
 - Request
     ```shell
-    curl -XGET http://localhost:5000/customers \
-        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss=" \
+    curl -XGET http://localhost:5000/customers
+        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss="
     ```
 
 - Response
@@ -248,9 +248,9 @@ Get all customers
 Get all customers with pagging and filter
 - Request
     ```shell
-    curl -XPOST http://localhost:5000/customers \
-        -H "Content-Type: application/json" \
-        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss=" \
+    curl -XPOST http://localhost:5000/customers
+        -H "Content-Type: application/json"
+        -H "Authorization: gAAAAABV6Cxtz2qbcgOOzcjjyoBXBxJbjxwY2cSPdJB4gta07ZQXUU5NQ2BWAFIxSZlnlCl7wAwLe0RtBECUuV96RX9iiU63BP7wI1RQW-G3a1zilI3FHss="
         -d '{
                 "page":1,
                 "itemPerPage":10,
